@@ -226,8 +226,9 @@
                 <div class="product__item">
                   <div
                     class="product__item__pic set-bg"
-                    data-setbg="<?php echo BASE_URL?>/public/img/product/<?php echo $product['image_product']?>"
+                    data-setbg=""
                   >
+                  <img src="<?php echo BASE_URL?>/public/upload/product/<?php echo $product['image_product']?>" alt="">
                     <ul class="product__item__pic__hover">
                       <li>
                         <a href="#"><i class="fa fa-heart"></i></a>
@@ -241,7 +242,7 @@
                     </ul>
                   </div>
                   <div class="product__item__text">
-                    <h6><a href="<?php echo BASE_URL?>/index/chitietsanpham/14"><?php echo $product['title_product']?></a></h6>
+                    <h6><a href="<?php echo BASE_URL?>/sanpham/chitietsanpham/<?php echo $product['id_product']?>"><?php echo $product['title_product']?></a></h6>
                     <h5><?php echo number_format($product['price_product'],0,',','.').'vnd'?></h5>
                   </div>
                 </div>

@@ -20,7 +20,7 @@ class index extends dcontroller{
         $data['post_index'] = $categorymodel->post_index($table_post_text);
 
         $this->load->view('header', $data);
-        // $this->load->view('slider');
+        $this->load->view('slider', $data);
         $this->load->view('home' ,$data);
         $this->load->view('footer', $data);
     }
@@ -44,12 +44,16 @@ class index extends dcontroller{
     }
     public function lienhe(){
         $table = 'category';
+        $table_post = 'post';
+        $table_post_text = "post_text";
         $categorymodel = $this->load->model('categorymodel');
+        $data['post_index'] = $categorymodel->post_index($table_post_text);
         $data['category'] = $categorymodel->category_home($table);
+        $data['category_post'] = $categorymodel->categorypost_home($table_post);
         $this->load->view('header', $data);
         // $this->load->view('slider');
         $this->load->view('contact');
-        $this->load->view('footer');
+        $this->load->view('footer', $data);
     }
 }
 ?>

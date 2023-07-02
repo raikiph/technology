@@ -82,8 +82,9 @@
             <div class="product__item">
               <div
                 class="product__item__pic set-bg"
-                data-setbg="<?php echo BASE_URL ?>/public/upload/product/<?php echo $relate['image_product']?>"
+                data-setbg=""
               >
+              <img src="<?php echo BASE_URL ?>/public/upload/product/<?php echo $relate['image_product']?>" alt="">
                 <ul class="product__item__pic__hover">
                   <li>
                     <a href="#"><i class="fa fa-heart"></i></a>

@@ -17,10 +17,11 @@ class tintuc extends dcontroller{
         $data['category'] = $categorymodel->category_home($table);
         $data['category_post'] = $categorymodel->categorypost_home($table_post);
         $data['list_post'] = $postmodel->list_post_home($table_post_text);
+        $data['post_index'] = $categorymodel->post_index($table_post_text);
         $this->load->view('header', $data);
         // $this->load->view('slider');
         $this->load->view('list_post', $data);
-        $this->load->view('footer'); 
+        $this->load->view('footer', $data); 
     }
     public function danhmuc($id){
         $table = 'category';
@@ -30,10 +31,11 @@ class tintuc extends dcontroller{
         $data['category'] = $categorymodel->category_home($table);
         $data['category_post'] = $categorymodel->categorypost_home($table_post);
         $data['postbyid'] = $categorymodel->postbyid_home($table_post_text, $table_post, $id);
+        $data['post_index'] = $categorymodel->post_index($table_post_text);
         $this->load->view('header', $data);
         // $this->load->view('slider');
         $this->load->view('categorypost', $data);
-        $this->load->view('footer');
+        $this->load->view('footer', $data);
     }
     public function chitiettin($id){
         $table = 'category';

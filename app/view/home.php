@@ -90,34 +90,47 @@
                     </div>
                 </div>
             </div>
-            <div class="row featured__filter">
-        <?php foreach ($product as $key => $prod) {
-            if($prod['product_hot']==1){
+            
+            <div class="product__discount__slider owl-carousel">
+                <?php 
+                foreach ($product as $key => $product_slide) {
+            if($product_slide['product_hot']==1){
         ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="">
-                        <img src="<?php echo BASE_URL?>/public/upload/product/<?php echo $prod['image_product']?>" alt="">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
+                  <div class="col-lg-4">
+                    <div class="product__discount__item">
+                      <div
+                        class="product__discount__item__pic set-bg"
+                        data-setbg="  "
+                      >
+                      <img src="<?php echo BASE_URL?>/public/upload/product/<?php echo $product_slide['image_product']?>" alt="">
+                        <div class="product__discount__percent">HOT</div>
+                        <ul class="product__item__pic__hover">
+                          <li>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="fa fa-retweet"></i></a>
+                          </li>
+                          <li>
+                            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="product__discount__item__text">
+                        <!-- <span>Dried Fruit</span> -->
+                        <h5><a href="<?php echo BASE_URL?>/sanpham/chitietsanpham/<?php echo $product_slide['id_product']?>"><?php echo $product_slide['title_product']?></a></h5>
+                        <div class="product__item__price">
+                        <?php echo number_format($product_slide['price_product'],0,',','.').'vnd'?>
                         </div>
-                        <div class="featured__item__text">
-                            <h6>
-                                <a href="<?php echo BASE_URL?>/sanpham/chitietsanpham/<?php echo $prod['id_product']?>"><?php echo $prod['title_product']?></a>
-                            </h6>
-                            <h5><?php echo number_format($prod['price_product'],0,',','.').'vnd'?></h5>
-                        </div>
+                      </div>
                     </div>
+                  </div>
+<?php
+}
+                }
+?>
                 </div>
-                <?php
-}
-}
-                ?>
-            </div>
-        </div>
+              </div>
     </section>
     <section class="featured spad">
         <div class="container">

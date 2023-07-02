@@ -11,7 +11,10 @@ class login extends dcontroller{
     }
     public function login(){
         session::init();
-        $this->load->view('header');
+        $table = 'category';
+        $categorymodel = $this->load->model('categorymodel');
+        $data['category'] = $categorymodel->category_home($table);
+        $this->load->view('header', $data);
         if(session::get("login")==true){
             header("location:".BASE_URL."/login/dashboard");
         }
