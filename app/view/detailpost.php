@@ -65,10 +65,9 @@ foreach ($details_post as $key => $post) {
                   <li><i class="fa fa-comment-o"></i> 5</li>
                 </ul> -->
                 <h5><a href="<?php echo BASE_URL?>/tintuc/chitiettin/<?php echo $relate['id_post_text']?>"><?php echo $relate['title_post_text']?></a></h5>
-                <!-- <p>
-                  Sed quia non numquam modi tempora indunt ut labore et dolore
-                  magnam aliquam quaerat
-                </p> -->
+                <p>
+                <?php echo substr($relate['content_post_text'], 0, 50) ?>...
+                </p>
               </div>
             </div>
           </div>

@@ -46,6 +46,7 @@ class tintuc extends dcontroller{
         $data['category'] = $categorymodel->category_home($table);
         $data['category_post'] = $categorymodel->categorypost_home($table_post);
         $data['postbyid'] = $categorymodel->postbyid_home($table_post,$table_post_text, $id);
+        $data['post_index'] = $categorymodel->post_index($table_post_text);
        
         $data['details_post'] = $categorymodel->details_post_home($table_post, $table_post_text, $cond);
         foreach ($data['details_post'] as $key => $cate) {
@@ -56,7 +57,7 @@ class tintuc extends dcontroller{
         $this->load->view('header',$data);
         // $this->load->view('slider');
         $this->load->view('detailpost', $data);
-        $this->load->view('footer');
+        $this->load->view('footer' ,$data);
     }
 }
 ?>

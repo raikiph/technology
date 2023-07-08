@@ -160,7 +160,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="<?php echo BASE_URL?>/sanpham/chitietsanpham"><?php echo $prod['title_product']?></a></h6>
+                            <h6><a href="<?php echo BASE_URL?>/sanpham/chitietsanpham/<?php echo $prod['id_product']?>"><?php echo $prod['title_product']?></a></h6>
                             <h5><?php echo number_format($prod['price_product'],0,',','.').'vnd'?></h5>
                         </div>
                     </div>

@@ -14,12 +14,12 @@ class login extends dcontroller{
         $table = 'category';
         $categorymodel = $this->load->model('categorymodel');
         $data['category'] = $categorymodel->category_home($table);
-        $this->load->view('header', $data);
+        // $this->load->view('header', $data);
         if(session::get("login")==true){
             header("location:".BASE_URL."/login/dashboard");
         }
         $this->load->view('admin/login');
-        $this->load->view('footer');
+        // $this->load->view('footer');
     }
     public function dashboard(){
         session::checksession();

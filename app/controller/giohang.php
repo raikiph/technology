@@ -82,5 +82,50 @@ class giohang extends dcontroller{
                 header("location:".BASE_URL.'/giohang');
             }
         }
+        public function dathang(){
+            session::init();
+            $table_order = "don_hang"; 
+            $table_order_detail = "don_hang_detail"; 
+            $ordermodel = $this->load->model('ordermodel');
+           
+            $name = $_POST['name'];
+            $sodienthoai = $_POST['sodienthoai'];
+            $noidung = $_POST['noidung'];
+            $diachi = $_POST['diachi'];
+            $email = $_POST['email'];
+           
+            date_default_timezone_set('asia/ho_chi_minh');
+            $date = date("d/m/Y");
+            $hour = date("h:i:sa");
+            $order_code = rand(0, 9999);
+            $order_date = $date.$hour;
+            $data_order = array(
+                'order_status' => 0,
+                'order_code' => $order_code,
+                'order_date' => $date.' '.$hour,
+            );
+            $result_order = $ordermodel->insert_order($table_order, $data_order);
+            if(session::get("shopping_cart") == true){
+                foreach (session::get("shopping_cart")as $key => $value) {
+                    $data_detail = array(
+                        'order_code' => $order_code,
+                        'product_id' => $value['product_id'],
+                        'product_quantity' => $value['product_quantity'],
+                        'name' => $name,
+                        'sodienthoai'=> $sodienthoai,
+                        'noidung'=>$noidung,
+                        'diachi'=>$diachi,
+                        'email'=>$email,
+                    );
+            $result_order_detail = $ordermodel->insert_order_detail($table_order_detail, $data_detail);
+                }
+                unset($_SESSION['shopping_cart']);
+            }
+            if($result_order_detail){
+
+                $message['msg'] = "Dat hang thanh cong";
+                header('location:'.BASE_URL."/giohang?msg=".urldecode(serialize($message)));
+            }
+        }
     }
 ?>
