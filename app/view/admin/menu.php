@@ -53,7 +53,6 @@
                 Don hang
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="<?php echo BASE_URL ?>/order/add_order">Them</a></li>
                 <li><a class="dropdown-item" href="<?php echo BASE_URL ?>/order">Liet ke</a></li>
              </ul>
             </li>
