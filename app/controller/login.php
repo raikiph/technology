@@ -11,9 +11,9 @@ class login extends dcontroller{
     }
     public function login(){
         session::init();
-        $table = 'category';
-        $categorymodel = $this->load->model('categorymodel');
-        $data['category'] = $categorymodel->category_home($table);
+        // $table = 'category';
+        // $categorymodel = $this->load->model('categorymodel');
+        // $data['category'] = $categorymodel->category_home($table);
         // $this->load->view('header', $data);
         if(session::get("login")==true){
             header("location:".BASE_URL."/login/dashboard");
@@ -34,7 +34,7 @@ class login extends dcontroller{
         $table_admin = 'admin';
         $loginmodel = $this->load->model('loginmodel');
         $count = $loginmodel->login($table_admin, $username, $password);
-
+        echo $count;
         if($count == 0){
             $message['msg'] = "user hoac pass sai, xin kiem tra lai";
             header("location:".BASE_URL."/login");
