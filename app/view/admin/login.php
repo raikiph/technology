@@ -38,6 +38,11 @@
         <div class="input-field">
             <input type="submit" name="login" class="submit" value="Login" id="">
         </div>
+        <div class="input-field" style="margin-top: 10px;">
+        <button class="submit"><a style="color: black;text-decoration:none;" href="<?php echo BASE_URL?>">
+            Trang chu mua hang</a>
+        </button>
+        </div>
 
         <div class="two-col">
             <div class="one">

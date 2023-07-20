@@ -56,9 +56,6 @@
                 <li><a class="dropdown-item" href="<?php echo BASE_URL ?>/order">Liet ke</a></li>
              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL ?>/login/loginout">Dang xuat</a>
-            </li>
           </ul>
         </div>
       </div>

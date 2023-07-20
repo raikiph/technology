@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="/technology/public/img/logo.png" alt=""></a>
+                        <a href="<?php echo BASE_URL?>"><img src="/technology/public/img/logov2.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -159,8 +159,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>0122 456 333</h5>
+                                <span>Hỗ trợ 24/7</span>
                             </div>
                         </div>
                     </div>
